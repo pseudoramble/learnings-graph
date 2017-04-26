@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "babel-node index.js"
+    "dev": "nodemon --exec babel-node index.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,13 +16,15 @@
     "express": "^4.15.2",
     "graphql": "^0.9.3",
     "graphql-server-express": "^0.7.2",
-    "graphql-tools": "^0.11.0"
+    "graphql-tools": "^0.11.0",
+    "lodash": "^4.17.4"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "eslint": "^3.19.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-node": "^4.2.2",
-    "eslint-plugin-promise": "^3.5.0"
+    "eslint-plugin-promise": "^3.5.0",
+    "nodemon": "^1.11.0"
   }
 }

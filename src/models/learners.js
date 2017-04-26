@@ -1,20 +1,29 @@
+import _ from 'lodash';
+
 let learners = [
   {
-    id: 1,
+    lid: 1,
     bio: {
       name: 'Adam',
       age: 34
     }
   },
   {
-    id: 2,
+    lid: 4,
+    bio: {
+      name: 'Caleb',
+      age: 35
+    }
+  },
+  {
+    lid: 2,
     bio: {
       name: 'Bailey',
       age: 28
     }
   },
   {
-    id: 3,
+    lid: 3,
     bio: {
       name: 'Caleb',
       age: 40
@@ -23,5 +32,12 @@ let learners = [
 ];
 
 export const getLearner = id => learners.find(learner => learner.id === id);
-export const searchLearners = criteria => ({});
+
+export const searchLearners = criteria => {
+  const matchingCriteria = _.matches(criteria);
+
+  return learners.filter(({ bio }) => matchingCriteria(bio))
+                  .sort((a, b) => a.lid - b.lid);
+};
+
 export const signup = info => ({});
