@@ -1,10 +1,17 @@
 # Learnings Graph
 
-Learning things is most fun. It's also fun to see who is also learning things to bounce ideas off of. 
+Learning is most fun. It's also fun to see who is also learning about similar topics so you can bounce ideas off of them.
 
 Our goal here is to learn a little bit about GraphQL. We'll do this by attempting to setup a simple model of people who are learning about topics (call them Learners) to others, and likewise find topics which are popular or that other people you know of are learning about.
 
 The set of topics can be hard-coded. It's more about associating Learners with those topics, and finding new/old Friends studying those topics.
+
+## Getting started
+
+1. Clone this repo.
+1. Run `npm install`.
+1. Run `npm run dev` to start development.
+1. Navigator to [GraphiQL](http://localhost:1234/graphiql) to get started exploring.
 
 ## What should we be able to do at the end of this?
 
