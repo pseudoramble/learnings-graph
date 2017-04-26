@@ -9,13 +9,6 @@ let learners = [
     }
   },
   {
-    lid: 4,
-    bio: {
-      name: 'Caleb',
-      age: 35
-    }
-  },
-  {
     lid: 2,
     bio: {
       name: 'Bailey',
@@ -28,16 +21,31 @@ let learners = [
       name: 'Caleb',
       age: 40
     }
+  },
+  {
+    lid: 4,
+    bio: {
+      name: 'Caleb',
+      age: 35
+    }
   }
 ];
+let nextLid = _.last(learners).lid + 1;
 
 export const getLearner = id => learners.find(learner => learner.id === id);
 
 export const searchLearners = criteria => {
   const matchingCriteria = _.matches(criteria);
 
-  return learners.filter(({ bio }) => matchingCriteria(bio))
-                  .sort((a, b) => a.lid - b.lid);
+  return learners.filter(({ bio }) => matchingCriteria(bio));
 };
 
-export const signup = info => ({});
+export const signup = info => {
+  const learner = {
+    lid: ++nextLid,
+    bio: info
+  };
+
+  learners.push(learner);
+  return learner;
+};
