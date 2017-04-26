@@ -1,0 +1,32 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  learner(lid: ID!): Learner
+  learners(criteria: LearnerBioSearch!): [Learner]
+}
+
+type Mutation {
+  signup(info: LearnerBioSignup): Learner
+}
+
+type Learner {
+  lid: ID!
+  bio: LearnerBio!
+}
+
+input LearnerBioSearch {
+  name: String
+}
+
+type LearnerBio {
+  name: String
+  age: Int
+}
+
+input LearnerBioSignup {
+  name: String
+  age: Int
+}
