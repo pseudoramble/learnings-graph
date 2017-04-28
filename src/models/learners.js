@@ -32,7 +32,10 @@ let learners = [
 ];
 let nextLid = _.last(learners).lid + 1;
 
-export const getLearner = id => learners.find(learner => learner.id === id);
+export const getLearner = id => {
+  const lid = parseInt(id, 10);
+  return learners.find(learner => learner.lid === lid);
+};
 
 export const searchLearners = criteria => {
   const matchingCriteria = _.matches(criteria);
