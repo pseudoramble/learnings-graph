@@ -6,6 +6,7 @@ schema {
 type Query {
   learner(lid: ID!): Learner
   learners(criteria: LearnerBioSearch!): [Learner]
+  book(bid: String!): Book
 }
 
 type Mutation {
@@ -29,4 +30,12 @@ type LearnerBio {
 input LearnerBioSignup {
   name: String
   age: Int
+}
+
+type Book {
+  bid: String!
+  title: String,
+  author: String,
+  SBN: String@deprecated(reason: "Replaced with the international standard. Please use ISBN instead."),
+  ISBN: String
 }
